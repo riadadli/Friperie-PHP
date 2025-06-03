@@ -36,4 +36,4 @@ An online thrift store web application built with **PHP** and **MySQL**.
 
 ## 🧑‍💻 Author
 
-Hocine Chakib – [https://github.com/Hchakib](https://github.com/Hchakib)
+ADLI Riad – [https://github.com/Hchakib](https://github.com/riadadli)

@@ -1,0 +1,98 @@
+db pour le projet final commerce electronique :
+
+CREATE DATABASE ShelbyFrippe;
+-----------------------------------------
+
+CREATE TABLE utilisateur (
+    utilisateurid INT AUTO_INCREMENT PRIMARY KEY,      -- Identifiant unique pour chaque utilisateur
+    nomutilisateur VARCHAR(100) UNIQUE NOT NULL,       -- Nom d'utilisateur unique
+    email VARCHAR(100) UNIQUE NOT NULL,                -- Adresse email de l'utilisateur
+    motdepasse VARCHAR(255) NOT NULL,                  -- Mot de passe sécurisé (haché)
+    prenom VARCHAR(100),                               -- Prénom de l'utilisateur
+    nom VARCHAR(255),                                  -- Nom de l'utilisateur
+    datenaissance DATE,                                -- Date de naissance
+    adresse VARCHAR(255),                              -- Adresse de l'utilisateur
+    telephone VARCHAR(15)                              -- Numéro de téléphone
+);
+
+
+----------------------------------------------------------------------------------
+
+
+CREATE TABLE articleattente (
+    articleattenteid INT AUTO_INCREMENT PRIMARY KEY,    -- Identifiant unique pour chaque article en attente
+    nom VARCHAR(100) NOT NULL,                          -- Nom de l'article
+    description TEXT,                                   -- Description de l'article
+    genre VARCHAR(50),                                  -- Genre de l'article (par exemple : Homme, Femme, Unisexe)
+    taille VARCHAR(10),                                 -- Taille de l'article (par exemple : XS, S, M, L, XL)
+    couleur VARCHAR(50),                                -- Couleur de l'article
+    quantite INT NOT NULL,                              -- Quantité de l'article
+    prix DECIMAL(10, 2) NOT NULL,                       -- Prix de l'article
+    photo VARCHAR(255),                                 -- Lien ou chemin vers la photo de l'article
+    dateajout DATETIME NOT NULL,                        -- Date et heure de soumission de l'article
+    nomutilisateur VARCHAR(100) NOT NULL                -- Nom d'utilisateur de la personne qui a ajouté l'article
+);
+
+--------------------------------------------------------------------------------------
+
+CREATE TABLE articles (
+    articleid INT AUTO_INCREMENT PRIMARY KEY,          -- Identifiant unique pour chaque article
+    nom VARCHAR(100) NOT NULL,                          -- Nom de l'article
+    description TEXT,                                   -- Description de l'article
+    genre VARCHAR(50),                                  -- Genre de l'article (par exemple : Homme, Femme, Unisexe)
+    taille VARCHAR(10),                                 -- Taille de l'article (par exemple : XS, S, M, L, XL)
+    couleur VARCHAR(50),                                -- Couleur de l'article
+    quantite INT NOT NULL,                              -- Quantité de l'article
+    prix DECIMAL(10, 2) NOT NULL,                       -- Prix de l'article
+    photo VARCHAR(255),                                 -- Lien ou chemin vers la photo de l'article
+    dateajout DATETIME NOT NULL,                        -- Date et heure d'ajout définitive de l'article
+    nomutilisateur VARCHAR(100) NOT NULL                -- Nom d'utilisateur de la personne qui a ajouté l'article
+);
+----------------------------------------------------------------
+INSERT INTO articles (nom, description, genre, taille, quantite, prix, photo, dateajout, nomutilisateur)
+VALUES
+-- Articles divers
+('Casquette Unisexe Ami Paris', 'Casquette élégante et tendance de la marque Ami Paris', 'Unisexe', 'Unique', 50, 89.99, 'images/CasquetteUnisexeMarqueAmiParis.jpg', '2024-12-05 18:30:00', 'ShelbyFripe'),
+('Air Max One Homme', 'Chaussures Air Max One pour homme, confortables et élégantes', 'Homme', '44', 20, 120.99, 'images/AirmaxoneHommeTaille44.jpg', '2024-12-05 10:00:00', 'ShelbyFripe'),
+('Boots Moncler Femme', 'Bottes Moncler élégantes et chaudes pour femme', 'Femme', '37', 15, 250.49, 'images/BootsMonclerFemmeTaille37.jpg', '2024-12-05 10:30:00', 'ShelbyFripe'),
+('Doudoune Sans Manche Homme', 'Doudoune sans manche pour homme, parfaite pour l\'hiver', 'Homme', 'XXL', 10, 180.99, 'images/DoudouneSansMancheHommeTailleXXL.jpg', '2024-12-05 11:00:00', 'ShelbyFripe'),
+('Jacket Homme Vintage 2001', 'Veste vintage The North Face de 2001', 'Homme', 'L', 8, 230.49, 'images/JacketHommeVintage2001TheNorthFACE.jpg', '2024-12-05 11:30:00', 'ShelbyFripe'),
+('Jacket Moncler Femme', 'Veste Moncler élégante pour femme', 'Femme', 'L', 12, 350.99, 'images/JacketMonclerFemmeTailleL.jpg', '2024-12-05 12:00:00', 'ShelbyFripe'),
+('Jean Ralph Vintage', 'Jean Ralph Lauren des années 90', 'Unisexe', 'M', 18, 95.99, 'images/JeanRalphVintage90s.jpg', '2024-12-05 12:30:00', 'ShelbyFripe'),
+('Nike Huarache Femme', 'Chaussures Nike Huarache tendance pour femme', 'Femme', '36', 25, 110.99, 'images/NikeHuaracheFemme36.jpg', '2024-12-05 13:00:00', 'ShelbyFripe'),
+('Polo Femme Ralph Lauren', 'Polo Ralph Lauren pour femme, confortable et stylé', 'Femme', 'M', 30, 70.99, 'images/PoloFemmeMarqueRalpheLaurenM.jpg', '2024-12-05 13:30:00', 'ShelbyFripe'),
+('Polo Homme Ralph Italie', 'Polo Ralph Lauren pour homme, fabriqué en Italie', 'Homme', 'L', 20, 80.49, 'images/PoloHommeRalpheItalie.jpg', '2024-12-05 14:00:00', 'ShelbyFripe'),
+('Sac à Main Femme Coach', 'Sac à main de luxe pour femme de la marque Coach', 'Femme', 'Unique', 15, 350.99, 'images/SacAmainFemmeCoach.jpg', '2024-12-05 14:30:00', 'ShelbyFripe'),
+('Sac Coach Femme', 'Sac Coach classique pour femme', 'Femme', 'Unique', 20, 300.49, 'images/SacCoachFemme.jpg', '2024-12-05 15:00:00', 'ShelbyFripe'),
+('Sandales Femme Kate Spade', 'Sandales élégantes pour femme de la marque Kate Spade', 'Femme', '38', 25, 120.99, 'images/SandalesFemmeMarqueKateSpade.jpg', '2024-12-05 15:30:00', 'ShelbyFripe'),
+('Trapper Homme', 'T-shirt Trapper tendance pour homme', 'Homme', 'M', 35, 45.99, 'images/TrapperHommeM.jpg', '2024-12-05 16:00:00', 'ShelbyFripe'),
+('T-shirt Ralph Homme', 'T-shirt Ralph Lauren confortable pour homme', 'Homme', 'XL', 20, 60.99, 'images/TshirtRalphHommeTailleXL.jpg', '2024-12-05 16:30:00', 'ShelbyFripe'),
+('Ugg Classic Mini Femme', 'Bottes Ugg Classic Mini pour femme', 'Femme', '38', 12, 200.99, 'images/UggClassicMiniFemmeTaille38.jpg', '2024-12-05 17:00:00', 'ShelbyFripe'),
+('Veste Lacoste Homme', 'Veste Lacoste élégante et intemporelle pour homme', 'Homme', 'L', 15, 250.49, 'images/VesteLacosteHommeTailleL.jpg', '2024-12-05 17:30:00', 'ShelbyFripe'),
+('Wallet Femme Michael Kors', 'Portefeuille élégant pour femme de la marque Michael Kors', 'Femme', 'Unique', 25, 180.99, 'images/WalletMichaelKorsFemme.jpg', '2024-12-05 18:00:00', 'ShelbyFripe'),
+-- Articles ajoutés plus tard
+('Ensemble Stone Island Homme', 'Ensemble tendance et confortable de la marque Stone Island', 'Homme', 'L', 10, 350.49, 'images/EnsembleStoneIslandHommeTailleL.jpg', '2024-12-05 19:00:00', 'ShelbyFripe'),
+('Short Cargo Été Stone Island', 'Short cargo d’été stylé de la marque Stone Island', 'Homme', 'M', 25, 120.99, 'images/ShortCargoEteStoneIslandM.jpg', '2024-12-05 19:30:00', 'ShelbyFripe'),
+('Sac de Couchage CP Company Homme', 'Sac de couchage pratique et élégant de la marque CP Company', 'Homme', 'Unique', 15, 200.99, 'images/SacCouchageCPCompanyHomme.jpg', '2024-12-05 20:00:00', 'ShelbyFripe'),
+('Veste CP Company Homme', 'Veste élégante et légère de la marque CP Company', 'Homme', 'S', 20, 280.49, 'images/VesteCPCompanyHommeTailleS.jpg', '2024-12-05 20:30:00', 'ShelbyFripe');
+---------------------------------------------------------------------------------------
+Structure et détails :
+Casquette Unisexe Ami Paris : Unisexe, taille unique, disponible en 50 exemplaires.
+Ensemble Stone Island Homme : Ensemble haut de gamme, taille L, disponible en 10 exemplaires.
+Short Cargo Été Stone Island : Short pour homme, taille M, parfait pour l’été.
+Sac de Couchage CP Company Homme : Accessoire pratique pour homme, taille unique.
+Veste CP Company Homme : Veste stylée, taille S.
+
+
+Structure du code :
+nom : Le nom de l'article avec une description succincte.
+description : Une description pour identifier l'article.
+genre : Public cible (Homme, Femme ou Unisexe).
+taille : Taille ou indication de dimension (ex. 36, L, Unique).
+quantite : Quantité en stock.
+prix : Prix unitaire avec deux décimales.
+photo : Chemin d'accès ou lien à l'image du produit.
+dateajout : Date et heure d'ajout.
+nomutilisateur : Nom de l'utilisateur ayant ajouté l'article.
+
+

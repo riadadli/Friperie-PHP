@@ -1,0 +1,161 @@
+
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Image dans la carte */
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Bouton */
+.btn-primary {
+    background-color: #6c757d;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #495057;
+}
+/* Ambiance Vintage */
+body {
+    font-family: 'Georgia', serif;
+    background-image: url('images/background.jpg'); /* Chemin vers l'image */
+    background-size: cover; /* L'image couvre tout l'écran */
+    background-position: center; /* Centrage de l'image */
+    background-repeat: no-repeat; /* Pas de répétition de l'image */
+    background-attachment: fixed; /* Image fixe lors du défilement */
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Conteneur principal */
+.login-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Carte de connexion */
+.card {
+    background-color: rgba(255, 248, 220, 0.9); /* Transparence douce */
+    border: 2px solid #6c757d;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    max-width: 100%;
+}
+
+/* En-tête de la carte */
+.card-header {
+    background-color: #6c757d;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 15px;
+    border-radius: 10px 10px 0 0;
+}
+
+/* Boutons */
+.btn-primary {
+    background-color: #6c757d;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #495057;
+}
+
+/* Liens */
+a {
+    color: #6c757d;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #495057;
+}
+
+/* Transitions */
+.card {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ajout d'effets sur les liens de navigation */
+.nav-link {
+    transition: color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .nav-link:hover {
+    color: #ffb400; /* Couleur dorée pour un effet lumineux */
+    transform: scale(1.1);
+  }
+  
+  /* Effet bouton pour la déconnexion */
+  .btn-outline-light {
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .btn-outline-light:hover {
+    background-color: #ffb400;
+    color: #333;
+  }
+  
+  /* Amélioration de la réactivité */
+  .navbar {
+    transition: background-color 0.3s ease;
+  }
+  
+  .navbar:hover {
+    background-color: #555;
+  }
+  
+  /* Shadow pour un effet dynamique */
+  .shadow-sm {
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
+  }
+
+/* Effets de survol sur les champs */
+.form-control:focus {
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+    border-color: #007bff;
+}
+
+/* Bouton avec des transitions douces */
+.btn-success {
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-success:hover {
+    transform: scale(1.1);
+}
+
+/* Texte d'en-tête stylisé */
+h1 {
+    color: #495057;
+}
+
+/* Amélioration globale de la mise en page */
+.container {
+    max-width: 1140px;
+}  
